@@ -8,9 +8,9 @@ function Topbar(props) {
         <div id='topo'>
             <div id='fundo_pesquisa'>
                 <input id="pesq_tarefa" placeholder={props.placeholder}/>
-                <GrFormSearch size={25} color="rgb(0,0,0)"/>
+                <GrFormSearch size={25} color="black"/>
             </div>
-                <BsBellFill size={25} color="rgb(0,0,0)"/>
+                <BsBellFill size={25} color="black"/>
         </div>
     )
 }

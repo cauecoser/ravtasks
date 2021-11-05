@@ -38,6 +38,26 @@
 }
 
 body {
-  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  /* font-family: Arial, Helvetica, sans-serif; */
   background-color: white;
+  margin:auto;
+  padding: 30px 15px 30px 15px;
+}
+
+#demais {
+  padding: 30px;
+  display: flex;
+  align-content: space-around;
+  align-items: flex-start;
+  gap: 40px;
+}
+
+#divbotao {
+  height: 50px;
+  width: 250px;
+  background-color: lightgray;
+  display: flex;
+  border: solid;
+  border-color: gray;
+  border-width: 1px;
 }
