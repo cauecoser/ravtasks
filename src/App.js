@@ -1,5 +1,4 @@
 import './App.css'
-import './reset.css'
 import Botao from './botao/botao'
 import Grupo from './grupo/grupo'
 import Topbar from './topbar/topbar'
