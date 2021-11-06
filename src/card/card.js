@@ -1,15 +1,14 @@
 import './card.css'
 
 function Card () {
-    // let texto_card = null
     return(
-        <input id='card' placeholder="Digite a atividade..." onClick={EditarAtividade}/>
+        <form id="card">
+            <fieldset><legend>Nova Atividade</legend>
+                <p>Atividade: <input id='nome' type="text" placeholder="Digite a atividade"/></p>
+                <p>Lembrete: <input id='data' type="date"/></p>
+            </fieldset>
+        </form>
     )
-}
-
-function EditarAtividade() {
-    // var tecto_card = document.querySelector('input#card').value    
-    alert('Você está editando a atividade!')
 }
 
 export default Card

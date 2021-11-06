@@ -8,6 +8,19 @@ function CriarGrupo() {
   alert('Você vai criar um novo grupo!')
 }
 
+document.addEventListener('keypress', function(enter) {
+  if(enter.keyCode === 13) {
+      CriarAtividade()
+  }
+})
+
+function CriarAtividade() {
+  var texto_card = document.querySelector('#nome').value
+  var prazo_card = document.querySelector('#data').value
+  var card = {atividade: texto_card, prazo: prazo_card}
+  alert('Atividade "'+card.atividade+'" criada com sucesso!')
+}
+
 function App() {
   return (<>
     <Topbar placeholder="Localizar Atividade"/>

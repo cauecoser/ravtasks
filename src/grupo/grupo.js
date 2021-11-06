@@ -2,7 +2,7 @@ import Botao from '../botao/botao'
 import Card from '../card/card'
 import './grupo.css'
 
-function CriarAtividade() {
+function CriarCard() {
     alert('Você vai criar uma nova atividade!')
 }
   
@@ -12,12 +12,13 @@ function Grupo (props) {
             <div id='tit_grupo'>
                 {props.tit_grupo}
             </div>
+            
             <div id='area_cards'>
                 <Card/>
-                <Card/>
             </div>
+            
             <div>
-                <Botao nomebotao="Novo Card +" onclick={CriarAtividade}/> 
+                <Botao nomebotao="Novo Card +" onclick={CriarCard}/> 
             </div>
         </div>
     )
