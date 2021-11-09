@@ -2,12 +2,10 @@ import React from 'react'
 import Botao from '../botao/botao'
 import Card from '../card/card'
 import './grupo.css'
-import { Button, Checkbox, Form, Modal } from 'semantic-ui-react'
+import { Button, Form, Modal } from 'semantic-ui-react'
 
 
-function CriarCard() {
-    alert('Você vai criar uma nova atividade!')
-}
+
   
 function Grupo (props) {
     
@@ -20,7 +18,6 @@ function Grupo (props) {
             </div>
             
             <div id='area_cards'>
-                <Card/>
             </div>
             
             <div>
@@ -33,21 +30,21 @@ function Grupo (props) {
         onOpen={() => setOpen(true)}
         open={open}
         size={'mini'}>
-        <Modal.Header>Defina a sua tarefa:</Modal.Header>
+        <Modal.Header>Configure a sua tarefa:</Modal.Header>
         <Modal.Content>
             <Form>
                 <Form.Field>
-                    <label>Tarefa</label>
+                    <label>Tarefa a ser realizada:</label>
                     <textarea id="descricao_tarefa" placeholder='Descreva a Tarefa...'/>  
                 </Form.Field>
                 <Form.Field>
-                    <label>Data</label>
+                    <label>Data limite para realização:</label>
                     <input type="date" placeholder='Prazo para execução...' />
                 </Form.Field>
             </Form>
         </Modal.Content>
         <Modal.Actions>
-            <Button color='lavender' onClick={() => setOpen(false)}>
+            <Button onClick={() => setOpen(false)}>
                 Cancelar
             </Button>
             <Button
@@ -56,7 +53,6 @@ function Grupo (props) {
                 labelPosition='right'
                 icon='checkmark'
                 onClick={() => setOpen(false)}
-                // positive
                 />
         </Modal.Actions>
     </Modal>

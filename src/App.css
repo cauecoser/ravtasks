@@ -61,3 +61,8 @@ body {
   border-color: gray;
   border-width: 1px;
 }
+
+#inputdiv {
+  width: 220px;
+}
+
