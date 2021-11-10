@@ -50,6 +50,9 @@ body {
   align-content: space-around;
   align-items: flex-start;
   gap: 40px;
+  overflow: scroll;
+  overflow: auto;
+  height: 100%;
 }
 
 #divbotao {

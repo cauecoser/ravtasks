@@ -1,6 +1,6 @@
 import React from 'react'
 import Botao from '../botao/botao'
-import Card from '../card/card'
+// import Card from '../card/card'
 import './grupo.css'
 import { Button, Form, Modal } from 'semantic-ui-react'
 
@@ -18,8 +18,8 @@ function Grupo (props) {
             </div>
             
             <div id='area_cards'>
+
             </div>
-            
             <div>
                 <Botao nomebotao="Novo Card +" onclick={() => setOpen(!open)}/> 
             </div>

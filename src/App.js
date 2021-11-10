@@ -5,8 +5,8 @@ import Botao from './botao/botao'
 import Grupo from './grupo/grupo'
 import Topbar from './topbar/topbar'
 
-// document.addEventListener('keypress', function(enter) {
-//   if(enter.keyCode === 13) {
+// document.addEventListener('keypress', function(tecla) {
+//   if(tecla.keyCode === 13) {
 //       CriarAtividade()
 //   }
 // })
@@ -20,21 +20,32 @@ import Topbar from './topbar/topbar'
 
 function App() {
   
-  const [show, setShow] = React.useState(true)
+  const [mostra, setMostra] = useState(true)
+
+  const [colunaGrupo, setColunaGrupo] = useState([])
+
+  if (!mostra) {
+    document.addEventListener('keyup', function(tecla) {
+      if(tecla.keyCode === 13) {
+        setColunaGrupo(fcoluna => [...fcoluna,<Grupo tit_grupo='ABC'/>])
+      }
+    })
+  }
 
   return (<>
     <Topbar placeholder="Localizar Atividade"/>
-    <div id='demais'>
-      <Grupo tit_grupo="JAVASCRIPT"/>
-      
-      <div id='divbotao'>
-        {
-          show ?
-          <Botao nomebotao="Novo Grupo +" onclick={()=>setShow(false)}/>: 
-          <Input label={<Botao id='botaox' nomebotao='x' onclick={()=>setShow(true)}/>} labelPosition='right' id='inputdiv' placeholder='Nome do Grupo...'/>
-        }
-      </div> 
-    </div>
+    {/* <div id=" scrollbarh"> */}
+      <div id='demais'>
+        {colunaGrupo}
+        <div id='divbotao'>
+          {
+            mostra ?
+            <Botao nomebotao="Novo Grupo +" onclick={()=>setMostra(false)}/>: 
+            <Input label={<Botao nomebotao='x' onclick={()=>setMostra(true)}/>} labelPosition='right' id='inputdiv' placeholder='Nome do Grupo...' />
+          }
+        </div> 
+      </div>
+    {/* </div> */}
   </>)
 }
 
