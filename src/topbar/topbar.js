@@ -7,7 +7,7 @@ import {BsBellFill} from 'react-icons/all'
 function Topbar(props) {
     return (
         <div id='topo'>
-            <Input id="pesquisa_tarefa" icon='search' placeholder='Localizar Atividade'/>
+            <Input id="pesquisa_tarefa" icon='search' placeholder={props.placeholder}/>
             <BsBellFill size={25} color="black"/>
         </div>
     )

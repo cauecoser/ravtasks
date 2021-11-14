@@ -9,7 +9,8 @@
     border-width: 1px;
 }
 #area_cards {
-    /* width: 250px; */
+    width: 250px;
+    padding-top: 5px;
     display: grid;
     align-content: center;
     justify-content: center;
@@ -27,9 +28,4 @@
     display: flex;
     justify-content: center;
     align-items: center;
-}
-
-#descricao_tarefa {
-    height: 75px;
-    min-height: 50px;
 }
