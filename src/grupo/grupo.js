@@ -1,15 +1,13 @@
-import React from 'react'
+import {React, useState} from 'react'
 import Botao from '../botao/botao'
 // import Card from '../card/card'
 import './grupo.css'
 import { Button, Form, Modal } from 'semantic-ui-react'
 
-
-
   
 function Grupo (props) {
     
-    const [open, setOpen] = React.useState(false)
+    const [open, setOpen] = useState(false)
     
     return(<>
         <div id="fundo_grupo">

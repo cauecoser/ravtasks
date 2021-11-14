@@ -24,28 +24,29 @@ function App() {
 
   const [colunaGrupo, setColunaGrupo] = useState([])
 
-  if (!mostra) {
+  function meteColuna() {
+    let tituloGrupo = ""
     document.addEventListener('keyup', function(tecla) {
-      if(tecla.keyCode === 13) {
-        setColunaGrupo(fcoluna => [...fcoluna,<Grupo tit_grupo='ABC'/>])
+      if(tecla.key === 'Enter') {
+        tituloGrupo = document.querySelector('#inputdiv').value
+        setColunaGrupo(fcoluna => [...fcoluna,<Grupo tit_grupo={tituloGrupo}/>])  
       }
     })
   }
 
+
   return (<>
     <Topbar placeholder="Localizar Atividade"/>
-    {/* <div id=" scrollbarh"> */}
       <div id='demais'>
         {colunaGrupo}
         <div id='divbotao'>
           {
             mostra ?
             <Botao nomebotao="Novo Grupo +" onclick={()=>setMostra(false)}/>: 
-            <Input label={<Botao nomebotao='x' onclick={()=>setMostra(true)}/>} labelPosition='right' id='inputdiv' placeholder='Nome do Grupo...' />
+            <Input onKeyUp={()=>meteColuna()} label={<Botao nomebotao='x' onclick={()=>setMostra(true)}/>} labelPosition='right' id='inputdiv' placeholder='Nome do Grupo...' />
           }
-        </div> 
+        </div>
       </div>
-    {/* </div> */}
   </>)
 }
 

@@ -51,8 +51,7 @@ body {
   align-items: flex-start;
   gap: 40px;
   overflow: scroll;
-  overflow: auto;
-  height: 100%;
+  height: calc(100vh - 48px);
 }
 
 #divbotao {
