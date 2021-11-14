@@ -21,20 +21,22 @@ import Topbar from './topbar/topbar'
 function App() {
   
   const [mostra, setMostra] = useState(true)
-
   const [colunaGrupo, setColunaGrupo] = useState([])
 
-  function meteColuna() {
+
+  function criaGrupo() {
     let tituloGrupo = ""
     document.addEventListener('keyup', function(tecla) {
       if(tecla.key === 'Enter') {
         tituloGrupo = document.querySelector('#inputdiv').value
-        setColunaGrupo(fcoluna => [...fcoluna,<Grupo tit_grupo={tituloGrupo}/>])  
+        // if(colunaGrupo.key in colunaGrupo) {alert('Grupo já existe')}
+        // if(colunaGrupo.tituloGrupo in colunaGrupo) {alert('Grupo já existente.')}
+        /*else(*/setColunaGrupo([colunaGrupo, <Grupo /* key={tituloGrupo} */ tit_grupo={tituloGrupo}/>])/*)*/
       }
     })
   }
 
-
+  
   return (<>
     <Topbar placeholder="Localizar Atividade"/>
       <div id='demais'>
@@ -43,7 +45,7 @@ function App() {
           {
             mostra ?
             <Botao nomebotao="Novo Grupo +" onclick={()=>setMostra(false)}/>: 
-            <Input onKeyUp={()=>meteColuna()} label={<Botao nomebotao='x' onclick={()=>setMostra(true)}/>} labelPosition='right' id='inputdiv' placeholder='Nome do Grupo...' />
+            <Input onKeyUp={()=>criaGrupo()} label={<Botao nomebotao='x' onclick={()=>setMostra(true)}/>} labelPosition='right' id='inputdiv' placeholder='Nome do Grupo...' />
           }
         </div>
       </div>
