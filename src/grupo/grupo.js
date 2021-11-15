@@ -7,20 +7,26 @@ import { Button, Form, Modal } from 'semantic-ui-react'
   
 function Grupo (props) {
     
-    // var tarefa_card = document.querySelector('#descricao_tarefa')
-    // var data_card = document.querySelector('#data_tarefa')
+    // var tarefa_card = ""
+    // var data_card = ""
 
+    // function tomarTarefa() {
+        
+    //     tarefa_card = document.querySelector('#descricao_tarefa').value
+    //     data_card = document.querySelector('#data_tarefa').value
+    //     setOpen(false)
+    // }
+   
     const [open, setOpen] = useState(false)
     
     return(<>
         <div id="fundo_grupo">
-            <div id='tit_grupo' /* maxLength="20" */>
+            <div id='tit_grupo'>
                 {props.tit_grupo}
             </div>
             <div id='area_cards'>
-                {/* <Card texto_card={tarefa_card} prazo_card={data_card}/> */}
-                <Card texto_card="Comprar ração Premium para o gato parar de comer todo o lixo existente no planeta." prazo_card="24/10/2021"/>
-                
+                {props.cards_grupo.map(y=> {
+                    return <Card texto_card={y.desc} prazo_card={y.data}/>})}        
             </div>
             <div>
                 <Botao nomebotao="Novo Card +" onclick={() => setOpen(!open)}/> 
@@ -54,7 +60,7 @@ function Grupo (props) {
                 content="Salvar Tarefa"
                 labelPosition='right'
                 icon='checkmark'
-                onClick={() => setOpen(false)}
+                // onClick={() => tomarTarefa()}
                 />
         </Modal.Actions>
     </Modal>

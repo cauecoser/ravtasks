@@ -7,6 +7,26 @@ import Topbar from './topbar/topbar'
 
 function App() {
   
+  var estrutura = [{titulo: "TÍTULO1",
+                    cards:[{desc:"TAREFA1T1",
+                            data:"DATA1T1"
+                           },
+                           {desc:"TAREFA2T1",
+                            data:"DATA2T1"
+                           }
+                          ]
+                    },
+                    {titulo: "TÍTULO2",
+                     cards:[{desc:"TAREFA1T2",
+                            data:"DATA1T2"
+                           },
+                           {desc:"TAREFA2T2",
+                            data:"DATA2T2"
+                           }
+                          ]
+                    }
+                  ]
+
   const [mostra, setMostra] = useState(true)
   const [colunaGrupo, setColunaGrupo] = useState([])
 
@@ -14,18 +34,18 @@ function App() {
     let tituloGrupo = ""
     document.addEventListener('keyup', function(tecla) {
       if(tecla.key === 'Enter') {
-        tituloGrupo = document.querySelector('#inputdiv').value
-        setColunaGrupo([colunaGrupo, <Grupo tit_grupo={tituloGrupo}/>])
+        // tituloGrupo = document.querySelector('#inputdiv').value
+        
+                            
         setTimeout(()=>{setMostra(true)},10)
       }
     })
   }
 
-
   return (<>
     <Topbar placeholder="Localizar Atividade"/>
       <div id='demais'>
-        {colunaGrupo}
+        {estrutura.map(x => {return <Grupo tit_grupo={x.titulo} cards_grupo={x.cards}/>})}
         <div id='divbotao'>
           {
             mostra ?
