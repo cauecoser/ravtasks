@@ -4,7 +4,7 @@ import './card.css'
 function Card (props) {
     
     return(<>
-        <div id='card'>
+        <div id='card' draggable onClick={props.onclick}>
             <div id='texto'>
                 {props.texto_card}
             </div>

@@ -8,39 +8,43 @@ import Topbar from './topbar/topbar'
 function App() {
   
   var estrutura = [{titulo: "TÍTULO1",
-                    cards:[{desc:"TAREFA1T1",
-                            data:"DATA1T1"
+                    cards:[{desc:"TAREFA1 T1",
+                            data:"DATA1 T1"
                            },
-                           {desc:"TAREFA2T1",
-                            data:"DATA2T1"
+                           {desc:"TAREFA2 T1",
+                            data:"DATA2 T1"
                            }
                           ]
                     },
                     {titulo: "TÍTULO2",
-                     cards:[{desc:"TAREFA1T2",
-                            data:"DATA1T2"
+                     cards:[{desc:"TAREFA1 T2",
+                            data:"DATA1 T2"
                            },
-                           {desc:"TAREFA2T2",
-                            data:"DATA2T2"
+                           {desc:"TAREFA2 T2",
+                            data:"DATA2 T2"
                            }
                           ]
                     }
                   ]
 
+
   const [mostra, setMostra] = useState(true)
-  const [colunaGrupo, setColunaGrupo] = useState([])
+  // const [colunaGrupo, setColunaGrupo] = useState([])
+  
 
   function criaGrupo() {
-    let tituloGrupo = ""
+    // let tituloGrupo = ""
     document.addEventListener('keyup', function(tecla) {
       if(tecla.key === 'Enter') {
         // tituloGrupo = document.querySelector('#inputdiv').value
-        
-                            
+                                    
         setTimeout(()=>{setMostra(true)},10)
       }
     })
   }
+
+
+  
 
   return (<>
     <Topbar placeholder="Localizar Atividade"/>
@@ -50,7 +54,7 @@ function App() {
           {
             mostra ?
             <Botao nomebotao="Novo Grupo +" onclick={()=>setMostra(false)}/>: 
-            <Input onKeyUp={()=>criaGrupo()} label={<Botao nomebotao='x' onclick={()=>setMostra(true)}/>} labelPosition='right' id='inputdiv' placeholder='Nome do Grupo...' />
+            <Input onKeyUp={()=>criaGrupo()} label={<Botao nomebotao='x' onclick={()=>setMostra(true)}/>} labelPosition='right' id='inputdiv' placeholder='Nome do Grupo' />
           }
         </div>
       </div>
